@@ -1,0 +1,23 @@
+{
+    "name": "uraankhayayaal/yii2-materializecomponents",
+    "description": "Yii2 materializecomponents",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"," materializecomponents"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ayaal Kaplin",
+            "email": "uraankhayayaal@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0",
+        "bower-asset/croppr": "*",
+        "yiisoft/yii2-imagine": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "uraankhayayaal\\materializecomponents\\": ""
+        }
+    }
+}
