@@ -12,7 +12,7 @@
     ],
     "require": {
         "yiisoft/yii2": "~2.0.0",
-        "bower-asset/croppr": "*",
+        "bower-asset/croppr": "^2.3",
         "yiisoft/yii2-imagine": "^2.1"
     },
     "autoload": {
