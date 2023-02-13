@@ -8,7 +8,7 @@ $value = isset($options['value']) ? $options['value'] : Html::getAttributeValue(
 ?>
 
 <input type="hidden" name="<?= $name ?>" id="<?= $options['id'] ?>" class="<?= $options['class'] ?>" value="<?= $value ?>">
-<input type="text" id="materialize_date_input" class="<?= $options['class'] ?> datepicker" value="<?= $value == null ? '' : date('M d, Y', $value)?>">
+<input type="text" id="materialize_date_input-<?= $options['id'] ?>" class="<?= $options['class'] ?> datepicker" value="<?= $value == null ? '' : date('M d, Y', $value)?>">
 
 <?php $this->registerJs("
     $('.datepicker').datepicker();
@@ -19,7 +19,7 @@ $value = isset($options['value']) ? $options['value'] : Html::getAttributeValue(
             return Date.parse(tDate) / 1000 - currnetTimeZoneOffsetInHours;
         },
     };
-    $('#materialize_date_input').on('change', function(e){
+    $('#materialize_date_input-".$options['id']."').on('change', function(e){
         $('#".$options['id']."').val(Format.to(this.value));
     });
 ",$this::POS_READY);?>
