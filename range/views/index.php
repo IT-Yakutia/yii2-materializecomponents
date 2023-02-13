@@ -7,7 +7,7 @@ use yii\helpers\Html;
         <p class="range-field">
             <label>
                 <span for="<?= Html::getInputId($model, $attribute); ?>"><?= $model->getAttributeLabel($attribute); ?></span>
-                <input type="range" name="<?= $model->formName() ?>[<?= $attribute ?>]" id="<?= Html::getInputId($model, $attribute); ?>" min="<?= $minValue ?>" max="<?= $maxValue ?>" />
+                <input type="range" name="<?= $model->formName() ?>[<?= $attribute ?>]" id="<?= Html::getInputId($model, $attribute); ?>" min="<?= $minValue ?>" max="<?= $maxValue ?>" value="<?= $model->$attribute ?>" />
             </label>
         </p>
         <?php foreach ($model->getErrors($attribute) as $key => $error) { ?>
