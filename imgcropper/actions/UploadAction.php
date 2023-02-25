@@ -47,12 +47,13 @@ class UploadAction extends Action
      */
     public function run()
     {
+        $imageShortSize = Yii::$app->formatter->asShortSize($this->maxSize);
         if (Yii::$app->request->isPost) {
             $file = UploadedFile::getInstanceByName($this->uploadParam);
             $model = new DynamicModel(compact($this->uploadParam));
             $model->addRule($this->uploadParam, 'image', [
-                'maxSize' => 10485760, //$this->maxSize,
-                'tooBig' => 'TOO_BIG_ERROR max size of file is {limit}, formatted size is {formattedLimit}.',
+                'maxSize' => $this->maxSize,
+                'tooBig' => "Размер изображения должно быть не больше {$imageShortSize}",
                 'extensions' => explode(', ', $this->extensions),
                 'wrongExtension' => 'EXTENSION_ERROR'
             ])->validate();
