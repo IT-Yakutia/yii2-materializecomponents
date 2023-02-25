@@ -3,8 +3,9 @@ use yii\helpers\Html;
 ?>
 
 <?= Html::activeHiddenInput($model, $widget->attribute, ['class' => 'photo-field']); ?>
-
+<?php if($model->{$widget->th_attribute}) { ?>
 <?= Html::activeHiddenInput($model, $widget->th_attribute, ['class' => 'photo-field']); ?>
+<?php } ?>
 
 <div>
 	<!-- Modal Trigger -->
