@@ -57,7 +57,7 @@ function getImgCrop(id){
         getImgUpdate(response.filelink, id);
     }).fail(function(xhr, err) { 
         var responseTitle= $(xhr.responseText).filter('title').get(0);
-        M.toast({html: $(responseTitle).text() + "\n" + formatErrorMessage(xhr, err)});
+        M.toast({html: $(responseTitle).text()});
     });
 }
 function getImgDelete(inputId, croppId){
