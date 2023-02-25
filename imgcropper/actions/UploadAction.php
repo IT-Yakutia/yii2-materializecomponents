@@ -96,7 +96,7 @@ class UploadAction extends Action
                     ];
                 } else {
                     $result = [
-                        'error' => 'ERROR_CAN_NOT_UPLOAD_FILE'
+                        'error' => 'Невозможно сохранить изобаржение в диск сервера'
                     ];
                 }
             }

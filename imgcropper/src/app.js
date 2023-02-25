@@ -51,7 +51,13 @@ function getImgCrop(id){
         contentType: false,
         processData: false, 
     }).done(function (response) {
+        if (response.error) {
+            M.toast({html: response.error});
+        }
         getImgUpdate(response.filelink, id);
+    }).fail(function(xhr, err) { 
+        var responseTitle= $(xhr.responseText).filter('title').get(0);
+        M.toast({html: $(responseTitle).text() + "\n" + formatErrorMessage(xhr, err)});
     });
 }
 function getImgDelete(inputId, croppId){
