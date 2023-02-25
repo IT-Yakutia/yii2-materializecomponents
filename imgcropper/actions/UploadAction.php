@@ -24,6 +24,8 @@ class UploadAction extends Action
     public $pngCompressionLevel = 9;
     public $width = 100;
     public $height = 100;
+    public $thWidth = 42;
+    public $thHeight = 42;
 
     /**
      * @inheritdoc
@@ -91,8 +93,12 @@ class UploadAction extends Action
                     'resolution-y' => 72,
                 ];
                 if ($image->save($this->path . $model->{$this->uploadParam}->name, $saveOptions)) {
+                    // generate a thumbnail image
+                    $thumbnail = Image::thumbnail($this->path . $model->{$this->uploadParam}->name, $this->thWidth, $this->thHeight);
+                    $thumbnail->save(Yii::getAlias($this->path . 'th_' . $model->{$this->uploadParam}->name), ['quality' => 50]);
                     $result = [
-                        'filelink' => $this->url . $model->{$this->uploadParam}->name
+                        'filelink' => $this->url . $model->{$this->uploadParam}->name,
+                        'th_filelink' => $this->url . 'th_' . $model->{$this->uploadParam}->name
                     ];
                 } else {
                     $result = [

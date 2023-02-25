@@ -55,6 +55,7 @@ function getImgCrop(id){
             M.toast({html: response.error});
         }
         getImgUpdate(response.filelink, id);
+        getThImgUpdate(response.th_filelink, id);
     }).fail(function(xhr, err) { 
         var responseTitle= $(xhr.responseText).filter('title').get(0);
         M.toast({html: $(responseTitle).text()});
@@ -72,6 +73,10 @@ function getImgUpdate(data, id){
     var modelThumbnail = document.getElementById(eval("cropps_"+id)["uic_modelThumbnail_id"]);
     modelThumbnail.src = data;
     hideLoader(id);
+}
+function getThImgUpdate(data, id){
+    var modelPhotoInput = document.getElementById(eval("cropps_"+id)["uic_model_th_attribute_field_id"]);
+    modelPhotoInput.value = data;
 }
 
 function hideLoader(id){

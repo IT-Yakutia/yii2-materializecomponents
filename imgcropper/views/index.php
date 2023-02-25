@@ -3,6 +3,9 @@ use yii\helpers\Html;
 ?>
 
 <?= Html::activeHiddenInput($model, $widget->attribute, ['class' => 'photo-field']); ?>
+
+<?= Html::activeHiddenInput($model, $widget->th_attribute, ['class' => 'photo-field']); ?>
+
 <div>
 	<!-- Modal Trigger -->
 	<a class="modal-trigger change-img" href="#modal-<?= $elementId ?>">

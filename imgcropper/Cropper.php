@@ -11,6 +11,7 @@ use yii\helpers\Html;
  */
 class Cropper extends \yii\widgets\InputWidget
 {
+	public $th_attribute = 'thumbnail';
 	public $elementId = 'uic_crop';
 	public $fileInputClass = 'uic_crop_file_input';
     public $fileInputId = 'uic_fileinput_id';
@@ -152,6 +153,7 @@ class Cropper extends \yii\widgets\InputWidget
 			cropps_'.$this->elementId.'["uic_filepreview_wrapper_id"] = ' . Json::encode($this->filePreviewWrapperId) . ';
 			cropps_'.$this->elementId.'["uic_modelThumbnail_id"] = ' . Json::encode($this->modelThumbnailId) . ';
 			cropps_'.$this->elementId.'["uic_model_attribute_field_id"] = ' . Json::encode(Html::getInputId($this->model, $this->attribute)) . ';
+			cropps_'.$this->elementId.'["uic_model_th_attribute_field_id"] = ' . Json::encode(Html::getInputId($this->model, $this->th_attribute)) . ';
 			cropps_'.$this->elementId.'["uic_url"] = ' . Json::encode($this->uploadUrl) . ';
 			cropps_'.$this->elementId.'["uic_no_photo_src"] = ' . Json::encode($this->noPhotoImage) . ';
 			
