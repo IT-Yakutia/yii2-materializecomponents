@@ -3,7 +3,7 @@ use yii\helpers\Html;
 ?>
 
 <?= Html::activeHiddenInput($model, $widget->attribute, ['class' => 'photo-field']); ?>
-<?php if($model->hasAttribute($widget->th_attribute)) { ?>
+<?php if($model->hasProperty($widget->th_attribute)) { ?>
 <?= Html::activeHiddenInput($model, $widget->th_attribute, ['class' => 'photo-field']); ?>
 <?php } ?>
 
