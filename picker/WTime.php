@@ -4,10 +4,10 @@ namespace uraankhayayaal\materializecomponents\picker;
 
 use yii\widgets\InputWidget;
 
-class WDate extends InputWidget
+class WTime extends InputWidget
 {
     public function run(){
-        return $this->render('date', [
+        return $this->render('time', [
             'model' => $this->model,
             'attribute' => $this->attribute,
             'field' => $this->field,
