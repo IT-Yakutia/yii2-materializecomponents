@@ -8,7 +8,7 @@ $value = isset($options['value']) ? $options['value'] : Html::getAttributeValue(
 ?>
 
 <input type="hidden" name="<?= $name ?>" id="<?= $options['id'] ?>" class="<?= $options['class'] ?>" value="<?= $value ?>">
-<input type="text" id="materialize_date_input-<?= $options['id'] ?>" class="<?= $options['class'] ?> datepicker" value="<?= $value == null ? '' : date('M d, Y', $value)?>">
+<input type="text" id="materialize_date_input-<?= $options['id'] ?>" class="<?= $options['class'] ?> datepicker" value="<?= $value == null ? '' : date('M d, Y', $value)?>" placeholder="Aug 16, 2023">
 
 <?php $this->registerJs("
     $('.datepicker').datepicker();

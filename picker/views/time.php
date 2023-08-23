@@ -7,7 +7,7 @@ $value = isset($options['value']) ? $options['value'] : Html::getAttributeValue(
 
 ?>
 
-<input type="text" name="<?= $name ?>" id="<?= $options['id'] ?>" class="<?= $options['class'] ?> timepicker" value="<?= $value ?>">
+<input type="text" name="<?= $name ?>" id="<?= $options['id'] ?>" class="<?= $options['class'] ?> timepicker" value="<?= $value ?>" placeholder="09:15">
 
 <?php $this->registerJs("
     $('.timepicker').timepicker({
